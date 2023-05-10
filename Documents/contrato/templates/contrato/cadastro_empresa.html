@@ -1,0 +1,44 @@
+{% extends 'contrato/base.html' %}
+{% load static %}
+{% block content  %}
+     <div style="height:600px; border: 1px solid light; border-radius: 10px; padding:30px; margin-top: 20px" class="container">
+      <h1>Cadastro de Novo Fiscal</h1> 
+      
+      <form action="" class="row g-3" method="post">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <label for="primeironome" class="form-label">Primeiro Nome</label>
+          <input name="primeironome" type="text" class="form-control" id="primeironome">
+        </div>
+        <div class="col-md-6">
+          <label for="ultimonome" class="form-label">Último Nome</label>
+          <input name="ultimonome" type="text" class="form-control" id="ultimonome">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input name="password" type="password" class="form-control" id="inputPassword4">
+        </div>
+        <!-- <div class="col-6">
+          <label for="formFile" class="form-label">Portaria de Nomeação</label>
+          <input name="portaria" class="form-control" type="file" id="formFile">
+        </div>
+        -->
+        <div class="col-6">
+          <label for="inputAddress" class="form-label">Telefone</label>
+          <input name="telefone" type="text" class="form-control" id="inputAddress" placeholder="Informe seu telefone">
+        </div>
+        
+        <div class="col-12">
+          <button type="submit" class="btn btn-success">Cadastrar Usuário</button>
+        </div>
+      </form>
+
+    </div>
+    <footer >
+      <img style="width:100%; height:300px" src="{% static 'img/rodape.png' %}" alt="My image">
+    </footer>
+  {% endblock  %}

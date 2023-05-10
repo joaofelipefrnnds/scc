@@ -57,7 +57,9 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # INFORMA QUE TODOS OS ARQUIVOS DE TEMPLATES VÃO FICAR NO DIRETÓRIO 
+        # RAIZ E NA PASTA "TEMPLATES"
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'American/Sao_Paulo'
+TIME_ZONE = 'utc'
 
 USE_I18N = True
 
@@ -119,6 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#TODOS OS ARQUIVOS ESTATICOS ESTÃO DENTRO DESSE DIRETÓRIO
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'setup\static')
+]
+# CAMINHO ABSOLUTO PARA O DIRETÓRIO
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
